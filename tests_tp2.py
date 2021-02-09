@@ -45,3 +45,7 @@ def test_box_action_look():
 def test_thing_create():
     t = Thing(3)
 
+def test_thing_volume():
+    t = Thing(3)
+    assert t.volume() == 3
+
