@@ -30,3 +30,10 @@ def test_box_is_open():
 
     b.close()
     assert not b.is_open()
+
+def test_box_action_look():
+    b = Box()
+    b.add("truc")
+    b.add("truc2")
+    b.open()
+    assert b.action_look() == "La boite contient : truc, truc2"
