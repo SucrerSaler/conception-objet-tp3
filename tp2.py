@@ -2,6 +2,7 @@ class Box:
     
     def __init__(self):
         self._contents = list()
+        self._open = False
 
     def __contains__(self, machin):
         return machin in self._contents
@@ -12,3 +13,11 @@ class Box:
     def remove(self, truc):
         self._contents.remove(truc)
 
+    def open(self):
+        self._open = True
+    
+    def close(self):
+        self._open = False
+
+    def is_open(self):
+        return self._open

@@ -26,7 +26,7 @@ def test_box_is_open():
     b = Box()
     
     b.open()
-    assert is_open()
+    assert b.is_open()
 
     b.close()
-    assert not is_open()
+    assert not b.is_open()
