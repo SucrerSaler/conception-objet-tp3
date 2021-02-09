@@ -15,7 +15,9 @@ def test_box_in():
     assert "truc1" in b
     assert "truc2" in b
 
-def test_box_dell():
+def test_box_remove():
     b = Box ()
-    b.dell("truc1")
-    b.dell("truc2")
+    b.add("truc1")
+    b.add("truc2")
+    b.remove("truc2")
+    assert "truc2" not in b

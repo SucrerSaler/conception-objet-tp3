@@ -9,6 +9,6 @@ class Box:
     def add(self, truc):
         self._contents.append(truc)
 
-    def dell(self, truc):
+    def remove(self, truc):
         self._contents.remove(truc)
 
