@@ -21,3 +21,12 @@ def test_box_remove():
     b.add("truc2")
     b.remove("truc2")
     assert "truc2" not in b
+
+def test_box_is_open():
+    b = Box()
+    
+    b.open()
+    assert is_open()
+
+    b.close()
+    assert not is_open()
