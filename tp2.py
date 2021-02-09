@@ -9,3 +9,5 @@ class Box:
     def add(self, truc):
         self._contents.append(truc)
 
+    def 
+
