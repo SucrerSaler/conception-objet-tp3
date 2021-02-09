@@ -28,3 +28,11 @@ class Box:
             return f"La boite contient : {str_contents}"
 
         return "La boite est fermee"
+
+
+
+class Thing:
+
+    def __init__(self, volume):
+        self._volume = volume
+        
