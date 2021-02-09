@@ -37,3 +37,5 @@ def test_box_action_look():
     b.add("truc2")
     b.open()
     assert b.action_look() == "La boite contient : truc, truc2"
+    b.close()
+    assert b.action_look() == "La boite est fermee"

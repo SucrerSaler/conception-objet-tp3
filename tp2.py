@@ -21,3 +21,10 @@ class Box:
 
     def is_open(self):
         return self._open
+
+    def action_look(self):
+        if self._open:
+            str_contents = ", ".join(self._contents)
+            return f"La boite contient : {str_contents}"
+
+        return "La boite est fermee"
