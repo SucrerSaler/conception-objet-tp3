@@ -40,6 +40,11 @@ def test_box_action_look():
     b.close()
     assert b.action_look() == "La boite est fermee"
 
+def test_box_set_capacity():
+    b = Box()
+    b.set_capacity(5)
+    assert b.get_capacity() == 5
+
 # ---------------------------------------------------------------------
 
 def test_thing_create():
