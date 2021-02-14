@@ -3,7 +3,7 @@ class Box:
     def __init__(self):
         self._contents = list()
         self._open = False
-        self.capacity = 0
+        self.capacity = None
 
     # -------------[getter]-----------------
     def get_capacity(self):
