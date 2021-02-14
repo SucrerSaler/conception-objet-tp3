@@ -44,6 +44,8 @@ class Thing:
 
     def __init__(self, volume):
         self._volume = volume
-        
+
+    # -------------[getter]-----------------  
     def volume(self):
         return self._volume
+    # --------------------------------------
