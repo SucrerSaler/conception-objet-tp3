@@ -3,6 +3,15 @@ class Box:
     def __init__(self):
         self._contents = list()
         self._open = False
+        self.capacity = 0
+
+    # -------------[getter]-----------------
+    def get_capacity(self):
+        return self.capacity
+
+    def is_open(self):
+        return self._open
+    # --------------------------------------
 
     def __contains__(self, machin):
         return machin in self._contents
@@ -19,15 +28,15 @@ class Box:
     def close(self):
         self._open = False
 
-    def is_open(self):
-        return self._open
-
     def action_look(self):
         if self._open:
             str_contents = ", ".join(self._contents)
             return f"La boite contient : {str_contents}"
 
         return "La boite est fermee"
+
+    def set_capacity(self, capacity):
+        self.capacity = capacity
 
 
 
