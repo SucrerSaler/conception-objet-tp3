@@ -63,7 +63,7 @@ def test_box_action_add():
     assert t1 in b
     assert not b.action_add(t2)
     assert not t2 in b
-    
+
 # ---------------------------------------------------------------------
 
 def test_thing_create():
@@ -73,3 +73,7 @@ def test_thing_volume():
     t = Thing(3)
     assert t.volume() == 3
 
+def test_thing_set_name():
+    t = Thing(5)
+    t.set_name("ballon")
+    assert t == "ballon"
