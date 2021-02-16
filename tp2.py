@@ -39,8 +39,10 @@ class Box:
         self.capacity = capacity
 
     def has_room_for(self, t):
-        return t.volume() <= self.capacity
-
+        if self.capacity != None:
+            return t.volume() <= self.capacity
+        else:
+            return True
 
 class Thing:
 
