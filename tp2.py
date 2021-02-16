@@ -5,6 +5,9 @@ class Box:
         self._open = False
         self.capacity = None
 
+    def __contains__(self, machin):
+        return machin in self._contents
+
     # -------------[getter]-----------------
     def get_capacity(self):
         return self.capacity
@@ -12,9 +15,6 @@ class Box:
     def is_open(self):
         return self._open
     # --------------------------------------
-
-    def __contains__(self, machin):
-        return machin in self._contents
 
     def add(self, truc):
         self._contents.append(truc)
@@ -59,8 +59,15 @@ class Thing:
 
     def __init__(self, volume):
         self._volume = volume
+        self._name = None
+
+    def __repr__(self):
+        return self._name
 
     # -------------[getter]-----------------  
     def volume(self):
         return self._volume
     # --------------------------------------
+
+    def set_name(self, name):
+        self._name = name

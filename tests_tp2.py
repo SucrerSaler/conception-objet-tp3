@@ -76,4 +76,4 @@ def test_thing_volume():
 def test_thing_set_name():
     t = Thing(5)
     t.set_name("ballon")
-    assert t == "ballon"
+    assert repr(t) == "ballon"
