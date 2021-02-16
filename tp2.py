@@ -44,6 +44,17 @@ class Box:
         else:
             return True
 
+    def action_add(self, t):
+        if self._open:
+            if self.has_room_for(t):
+                self.add(t)
+                self.capacity -= t.volume()
+                return True
+            else:
+                return False
+        else:
+            return False
+
 class Thing:
 
     def __init__(self, volume):
