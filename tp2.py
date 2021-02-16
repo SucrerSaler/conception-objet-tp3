@@ -38,6 +38,8 @@ class Box:
     def set_capacity(self, capacity):
         self.capacity = capacity
 
+    def has_room_for(self, t):
+        return t.volume() <= self.capacity
 
 
 class Thing:
