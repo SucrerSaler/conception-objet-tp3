@@ -47,8 +47,10 @@ def test_box_set_capacity():
 
 def test_box_has_room_for():
     b = Box()
+    t = Thing(1)
     t1 = Thing(5)
     b.set_capacity(4)
+    assert b.has_room_for(t)
     assert not b.has_room_for(t1)
 
 def test_box_action_add():
