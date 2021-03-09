@@ -67,6 +67,20 @@ def test_box_action_add():
     assert not b.action_add(t2)
     assert not t2 in b
 
+def test_box_find():
+    b = Box(is_open=False, capacity=6)
+    t1 = Thing(2, "ballon")
+    t2 = Thing(1, "gant")
+    b.open()
+    b.action_add(t1)
+    b.close()
+    assert b.find("ballon") is None
+    b.open()
+    assert b.find("ballon") == t1
+    assert b.find("gant") is None
+    b.action_add(t2)
+    assert b.find("gant") == t2
+
 # ---------------------------------------------------------------------
 
 def test_thing_create():
@@ -80,3 +94,8 @@ def test_thing_set_name():
     t = Thing(5)
     t.set_name("ballon")
     assert repr(t) == "ballon"
+
+def test_thing_has_name():
+    t = Thing(3, "ballon")
+    assert t.has_name("ballon")
+    assert not t.has_name("roue")

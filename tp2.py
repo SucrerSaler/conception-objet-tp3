@@ -1,9 +1,9 @@
 class Box:
     
-    def __init__(self):
+    def __init__(self, is_open=False, capacity=None):
         self._contents = list()
-        self._open = False
-        self.capacity = None
+        self._open = is_open
+        self.capacity = capacity
 
     def __contains__(self, machin):
         return machin in self._contents
@@ -55,11 +55,20 @@ class Box:
         else:
             return False
 
+    def find(self, name):
+        if self.is_open():
+            for truc in self._contents:
+                if truc.has_name(name):
+                    return truc
+            return None
+        else:
+            return None
+
 class Thing:
 
-    def __init__(self, volume):
+    def __init__(self, volume, name=None):
         self._volume = volume
-        self._name = None
+        self._name = name
 
     def __repr__(self):
         return self._name
@@ -71,3 +80,6 @@ class Thing:
 
     def set_name(self, name):
         self._name = name
+
+    def has_name(self, name):
+        return self._name == name
